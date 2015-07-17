@@ -1,0 +1,271 @@
+# ayebeesee's Item Filter Script
+# This scripts aims to:
+	# Show all items you want to pick up with borders
+	# Show all super awesome items as purple text (fishing rods for example)
+	# Show items you should consider picking up
+	# Hide items you will never want
+	# Shown items have smallest font size as to reduce screen clutter (generally rarer stuff is not smaller)
+	
+# TODO
+	# Chaos and regal recipe should show low level bases
+
+# Don't know why, Green dude done it... I should figure this out
+Hide
+    BaseType "Maple Round Shield"
+	SetFontSize 17
+
+# Show items you should pick up with borders
+#
+	# RGB sockets
+	Show
+		SocketGroup RGB
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+	Show
+		SocketGroup RGB
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+	Show
+		SocketGroup RGB
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 25
+
+	# Show Misc
+	Show
+		Rarity = Unique
+		SetBorderColor 175 96 37
+	Show
+		Class "Map"
+		SetFontSize 25
+
+	# Chaos recipe
+	Show
+		Rarity = Rare
+		ItemLevel >= 60
+		ItemLevel <= 74
+		Class "Two Hand" "Helm" "Body Armour" "Boots" "Belt" "Gloves" "Amulet" "Ring"
+		SetBackgroundColor 41 42 10
+		SetBorderColor 255 255 119
+		SetFontSize 25
+	# Regal Recipe
+	Show
+		Rarity = Rare
+		ItemLevel >= 75
+		Class "Two Hand" "Helm" "Body Armour" "Boots" "Belt" "Gloves" "Amulet" "Ring"
+		SetBackgroundColor 11 11 59
+		SetBorderColor 255 255 119
+		SetFontSize 25
+
+	# Show super awesome things larger and with purple colour
+	Show
+		BaseType "Albino Rhoa Feather"	
+		SetTextColor 255 0 255
+		SetBorderColor 255 0 255	
+		SetFontSize 42
+	Show
+		BaseType "Fishing Rod"
+		SetTextColor 255 0 255
+		SetBorderColor 255 0 255
+		SetFontSize 42
+	Show
+		BaseType "Mirror of Kalandra"
+		SetTextColor 255 0 255
+		SetBorderColor 255 0 255
+		SetFontSize 42
+
+	# Show 6 sockets
+	Show
+		Sockets = 6
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+	Show
+		Sockets = 6
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+	Show
+		Sockets = 6
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 25
+		
+	# Show 5 and 6 links at normal size
+	Show
+		LinkedSockets >= 5
+		Rarity = Normal
+		SetBorderColor 200 200 200
+	Show
+		LinkedSockets >= 5
+		Rarity = Magic
+		SetBorderColor 136 136 255
+	Show
+		LinkedSockets >= 5
+		Rarity = Rare
+		SetBorderColor 255 255 119
+
+	# Show quality gems
+	Show
+		Quality >= 1
+		Class "Gem"
+		SetBorderColor 27 162 155
+		SetFontSize 25
+	
+	# Show moderately awesome currency at normal size
+	Show
+		BaseType "Divine Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 35
+	Show
+		BaseType "Exalted Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 35
+	Show
+		BaseType "Eternal Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 35
+	
+	# Show good currency	
+	Show
+		BaseType "Chaos Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Regal Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Orb of Alteration"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Chromatic Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Jeweller's Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Blessed Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Orb of Scouring"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Cartographer's Chisel"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Gemcutter's Prism"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Orb of Fusing"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Orb of Alchemy"
+		SetBorderColor 170 158 130
+		SetFontSize 25	
+	Show
+		BaseType "Orb of Regret"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Vaal Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+	Show
+		BaseType "Orb of Chance"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+			
+	# Show Jewels
+	Show
+		Class "Jewel"
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+	Show
+		Class "Jewel"
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+	Show
+		Class "Jewel"
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 25
+
+	# Show high level jewelery (profitable to alch)
+	Show
+		ItemLevel >= 75
+		Rarity = Normal
+		Class "Ring" "Amulet"
+		SetBorderColor 200 200 200
+		SetFontSize 25
+		
+	# Show divination cards
+	Show
+		Class "Divination Card"
+		SetBorderColor 170 230 230
+		SetFontSize 25
+
+# Show things to consider picking up at smallest size
+#
+	Show 
+		LinkedSockets = 4
+		ItemLevel < 60	
+		SetFontSize 25	
+	Show
+		Quality >= 20
+		Class "One Hand" "Two Hand"
+		SetFontSize 25	
+	Show
+		Quality = 20
+		Class "Flask"
+		SetFontSize 25	
+	Show
+		BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+		SetFontSize 25	
+	Show
+		BaseType "Sapphire Flask" "Granite Flask" "Jade Flask" "Diamond Flask" "Topaz Flask" "Ruby Flask"
+		SetFontSize 25	
+	Show
+		Quality = 0
+		Class "Gem"
+		SetFontSize 25	
+	Show
+		BaseType "Sacrificial Garb"	
+		SetFontSize 25
+	Show
+		Class "Currency"
+		SetFontSize 25
+	Show
+		Rarity = Rare
+		SetFontSize 25
+	
+	# Things to chance
+	Show
+		BaseType "Goliath Gauntlets" "Gavel" "Occultist's Vestment"
+		
+
+# Hide unwanted items, also make them transparent and smaller 
+# (if you use key pick up this means screen doesn't get cluttered when picking up stuff)
+#
+	Hide
+		ItemLevel > 26
+		Rarity <= Magic
+		BaseType "Flask"
+		SetFontSize 17
+	Hide
+		ItemLevel > 15
+		Rarity <= Magic
+		SetFontSize 17
+		SetBackgroundColor 0 0 0 180
