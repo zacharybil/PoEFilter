@@ -9,27 +9,6 @@
 
 # Show items you should pick up with borders
 #
-	# RGB sockets, I don't necessarily want to pick these up but
-	# I need to be able to identify them quickly so they have the border
-	# but are also faded  
-	Show
-		SocketGroup RGB
-		Rarity = Normal
-		SetBorderColor 200 200 200
-		SetBackgroundColor 0 0 0 180
-		SetFontSize 17
-	Show
-		SocketGroup RGB
-		Rarity = Magic
-		SetBorderColor 136 136 255
-		SetBackgroundColor 0 0 0 180
-		SetFontSize 17
-	Show
-		SocketGroup RGB
-		Rarity = Rare
-		SetBorderColor 255 255 119
-		SetFontSize 17
-
 	# Show Misc
 	Show
 		Rarity = Unique
@@ -215,6 +194,28 @@
 		Class "Divination Card"
 		SetBorderColor 170 230 230
 		SetFontSize 25
+		
+	# RGB sockets, I don't necessarily want to pick these up but
+	# I need to be able to identify them quickly so they have the border
+	# but are also faded. I think this needs to go close to the bottom
+	# otherwise it will display 5 links and rares like this. 
+	Show
+		SocketGroup RGB
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetBackgroundColor 0 0 0 180
+		SetFontSize 17
+	Show
+		SocketGroup RGB
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetBackgroundColor 0 0 0 180
+		SetFontSize 17
+	Show
+		SocketGroup RGB
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 17
 
 # Show things to consider picking up at smallest size
 #
@@ -249,7 +250,7 @@
 	
 	# Things to chance
  	Show
-  		BaseType "Gavel" "Occultist's Vestment" "Spine Bow" "Agate Amulet" "Leather Belt" "Glorious Plate" "Imperial Bow" "Prophecy Wand" "Judgement Staff" "Gold Ring"
+  		BaseType "Desert Brigandine" "Gavel" "Occultist's Vestment" "Agate Amulet" "Leather Belt" "Glorious Plate" "Imperial Bow" "Prophecy Wand" "Judgement Staff" "Gold Ring"
  		Rarity = Normal
   		SetFontSize 25
 		
