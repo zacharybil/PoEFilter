@@ -1,11 +1,13 @@
 # ayebeesee's Item Filter Script
 # This scripts aims to:
 	# Show all items you want to pick up with borders
-	# Show all super rare items as purple text (fishing rods for example)
+	# Show Mirrors and fishing rods as purple because they're super rare
 	# Show items you should consider picking up
 	# Hide items you will never want
 	# Shown items have smaller font size as to reduce screen clutter (generally rarer stuff is not smaller)
-	# 2 Chaos/Regal recipe shows low bases
+	# Rare items suitable for 2 chaos recipe have borders to indicate you should use them for the recipe
+	# Rare items suitable for the 2 regal recipe have borders and highlight to indicate you should use them for the recipe
+	# High level white jewelery is shown because it can be beneficial to alch these
 
 # Show items you should pick up with borders
 #
@@ -17,22 +19,40 @@
 		Class "Map"
 		SetFontSize 25
 
-	# 2 Chaos recipe (i.e. low bases that are suitable for unidentified recipe)
+	# 2 Chaos recipe 
+	# Low bases that are suitable for unidentified recipe
+	# These have a border
 	Show
 		Rarity = Rare
 		ItemLevel >= 60
 		ItemLevel <= 74
 		DropLevel < 40
-		Class "Two Hand" "Helm" "Body Armour" "Boots" "Belt" "Gloves" "Amulet" "Ring"
-		SetBackgroundColor 41 42 10
+		Class "Two Hand" "Helm" "Body Armour" "Boots" "Gloves" 
 		SetBorderColor 255 255 119
 		SetFontSize 25
-	# 2 Regal Recipe (i.e. low bases that are suitable for unidentified recipe)
+	Show
+		Rarity = Rare
+		ItemLevel >= 60
+		ItemLevel <= 74
+		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Ring" "Paua Amulet"
+		SetBorderColor 255 255 119
+		SetFontSize 25
+		
+	# 2 Regal Recipe 
+	# Low bases that are suitable for unidentified recipe
+	# These have a border and a highlight
 	Show
 		Rarity = Rare
 		ItemLevel >= 75
 		DropLevel < 40
-		Class "Two Hand" "Helm" "Body Armour" "Boots" "Belt" "Gloves" "Amulet" "Ring"
+		Class "Two Hand" "Helm" "Body Armour" "Boots" "Gloves"
+		SetBackgroundColor 11 11 59
+		SetBorderColor 255 255 119
+		SetFontSize 25
+	Show
+		Rarity = Rare
+		ItemLevel >= 75
+		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Ring" "Paua Amulet"
 		SetBackgroundColor 11 11 59
 		SetBorderColor 255 255 119
 		SetFontSize 25
@@ -54,6 +74,20 @@
 		SetBorderColor 255 0 255
 		SetFontSize 42
 
+	# Show 5 and 6 links at normal size
+	Show
+		LinkedSockets >= 5
+		Rarity = Normal
+		SetBorderColor 200 200 200
+	Show
+		LinkedSockets >= 5
+		Rarity = Magic
+		SetBorderColor 136 136 255
+	Show
+		LinkedSockets >= 5
+		Rarity = Rare
+		SetBorderColor 255 255 119
+
 	# Show 6 sockets
 	Show
 		Sockets = 6
@@ -70,20 +104,6 @@
 		Rarity = Rare
 		SetBorderColor 255 255 119
 		SetFontSize 25
-		
-	# Show 5 and 6 links at normal size
-	Show
-		LinkedSockets >= 5
-		Rarity = Normal
-		SetBorderColor 200 200 200
-	Show
-		LinkedSockets >= 5
-		Rarity = Magic
-		SetBorderColor 136 136 255
-	Show
-		LinkedSockets >= 5
-		Rarity = Rare
-		SetBorderColor 255 255 119
 
 	# Show quality gems
 	Show
@@ -185,7 +205,7 @@
 	Show
 		ItemLevel >= 75
 		Rarity = Normal
-		Class "Ring" "Amulet"
+		BaseType "Topaz Ring" "Coral Ring" "Sapphire Ring" "Gold Ring" "Amethyst Ring" "Two-Stone Ring" "Amber Amulet" "Lapis Amulet" "Onyx Amulet" "Agate Amulet" "Turquoise Amulet" "Citrine Amulet" "Jade Amulet"
 		SetBorderColor 200 200 200
 		SetFontSize 25
 		
@@ -233,7 +253,7 @@
 		SetFontSize 25	
 	Show
 		BaseType "Sapphire Flask" "Granite Flask" "Jade Flask" "Diamond Flask" "Topaz Flask" "Ruby Flask"
-		SetFontSize 25	
+		SetFontSize 17	
 	Show
 		Quality = 0
 		Class "Gem"
