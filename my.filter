@@ -34,7 +34,7 @@
 		Rarity = Rare
 		ItemLevel >= 60
 		ItemLevel <= 74
-		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Ring" "Paua Amulet"
+		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Amulet" "Paua Amulet"
 		SetBorderColor 255 255 119
 		SetFontSize 25
 		
@@ -52,7 +52,7 @@
 	Show
 		Rarity = Rare
 		ItemLevel >= 75
-		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Ring" "Paua Amulet"
+		BaseType "Studded Belt" "Cloth Belt" "Iron Ring" "Paua Ring" "Unset Ring" "Coral Amulet" "Paua Amulet"
 		SetBackgroundColor 11 11 59
 		SetBorderColor 255 255 119
 		SetFontSize 25
@@ -206,8 +206,7 @@
 		ItemLevel >= 75
 		Rarity = Normal
 		BaseType "Topaz Ring" "Coral Ring" "Sapphire Ring" "Gold Ring" "Amethyst Ring" "Two-Stone Ring" "Amber Amulet" "Lapis Amulet" "Onyx Amulet" "Agate Amulet" "Turquoise Amulet" "Citrine Amulet" "Jade Amulet"
-		SetBorderColor 200 200 200
-		SetFontSize 25
+		SetFontSize 17
 		
 	# Show divination cards
 	Show
@@ -252,17 +251,25 @@
  		Rarity = Normal
   		SetFontSize 25
 		  
+	Show
+		Rarity = Magic
+		SetFontSize 25
+		BaseType "Vaal Axe"
+		  
 	# RGB sockets, I don't necessarily want to pick these up but
 	# I need to be able to identify them quickly so they have the border
 	# but are also faded. I think this needs to go close to the bottom
-	# otherwise it will display 5 links and rares like this. 
+	# otherwise it will display 5 links and rares like this. Also only 4 slot
+	# pieces are shown because they take less space
 	Show
+		Class "Helm" "Boots" "Gloves"
 		SocketGroup RGB
 		Rarity = Normal
 		SetBorderColor 200 200 200
 		SetBackgroundColor 0 0 0 180
 		SetFontSize 17
 	Show
+		Class "Helm" "Boots" "Gloves"
 		SocketGroup RGB
 		Rarity = Magic
 		SetBorderColor 136 136 255
