@@ -247,7 +247,7 @@
 	
 	# Things to chance
  	Show
-  		BaseType "Desert Brigandine" "Gavel" "Occultist's Vestment" "Agate Amulet" "Leather Belt" "Glorious Plate" "Imperial Bow" "Prophecy Wand" "Judgement Staff" "Gold Ring"
+  		BaseType "Desert Brigandine" "Gavel" "Occultist's Vestment" "Glorious Plate" "Spine Bow" "Judgement Staff"
  		Rarity = Normal
   		SetFontSize 25
 		  
