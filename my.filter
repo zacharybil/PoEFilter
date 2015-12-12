@@ -13,12 +13,26 @@
 #
 	# Show Misc
 	Show
-		BaseType "Talisman"
-	Show
 		Rarity = Unique
 		SetBorderColor 175 96 37
 	Show
 		Class "Map"
+		SetFontSize 25
+	# Talismans
+	Show
+		BaseType "Talisman"
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+	Show
+		BaseType "Talisman"
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+	Show
+		BaseType "Talisman"
+		Rarity = Rare
+		SetBorderColor 255 255 119
 		SetFontSize 25
 
 	# 2 Chaos recipe 
