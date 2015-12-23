@@ -18,6 +18,7 @@
 	Show
 		Class "Map"
 		SetFontSize 25
+		PlayAlertSound 1 300
 	# Talismans
 	Show
 		BaseType "Talisman"
@@ -79,30 +80,36 @@
 		SetTextColor 255 0 255
 		SetBorderColor 255 0 255	
 		SetFontSize 42
+		PlayAlertSound 5 300
 	Show
 		BaseType "Fishing Rod"
 		SetTextColor 255 0 255
 		SetBorderColor 255 0 255
 		SetFontSize 42
+		PlayAlertSound 5 300
 	Show
 		BaseType "Mirror of Kalandra"
 		SetTextColor 255 0 255
 		SetBorderColor 255 0 255
 		SetFontSize 42
+		PlayAlertSound 5 300
 
 	# Show 5 and 6 links at normal size
 	Show
 		LinkedSockets >= 5
 		Rarity = Normal
 		SetBorderColor 200 200 200
+		PlayAlertSound 4 300
 	Show
 		LinkedSockets >= 5
 		Rarity = Magic
 		SetBorderColor 136 136 255
+		PlayAlertSound 4 300
 	Show
 		LinkedSockets >= 5
 		Rarity = Rare
 		SetBorderColor 255 255 119
+		PlayAlertSound 4 300
 
 	# Show 6 sockets
 	Show
@@ -110,16 +117,19 @@
 		Rarity = Normal
 		SetBorderColor 200 200 200
 		SetFontSize 25
+		PlayAlertSound 4 300
 	Show
 		Sockets = 6
 		Rarity = Magic
 		SetBorderColor 136 136 255
 		SetFontSize 25
+		PlayAlertSound 4 300
 	Show
 		Sockets = 6
 		Rarity = Rare
 		SetBorderColor 255 255 119
 		SetFontSize 25
+		PlayAlertSound 4 300
 
 	# Show quality gems
 	Show
@@ -133,14 +143,17 @@
 		BaseType "Divine Orb"
 		SetBorderColor 170 158 130
 		SetFontSize 35
+		PlayAlertSound 4 300
 	Show
 		BaseType "Exalted Orb"
 		SetBorderColor 170 158 130
 		SetFontSize 35
+		PlayAlertSound 4 300
 	Show
 		BaseType "Eternal Orb"
 		SetBorderColor 170 158 130
 		SetFontSize 35
+		PlayAlertSound 4 300
 	
 	# Show good currency	
 	Show
@@ -227,7 +240,7 @@
 	# Show divination cards
 	Show
 		Class "Divination Card"
-		SetBorderColor 170 230 230
+		SetBorderColor 1 175 239
 		SetFontSize 25
 
 # Show things to consider picking up at smallest size
