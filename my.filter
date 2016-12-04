@@ -17,6 +17,11 @@
 		Rarity <= Magic
 		BaseType "Flask"
 		SetFontSize 17
+	# Should be further down but it gets hidden by below rule :(
+	Show
+		BaseType "Map"
+		SetFontSize 25
+		PlayAlertSound 1 300
 	Hide
 		ItemLevel > 15
 		Rarity <= Magic
@@ -29,10 +34,7 @@
 	Show
 		Rarity = Unique
 		SetBorderColor 175 96 37
-	Show
-		Class "Map"
-		SetFontSize 25
-		PlayAlertSound 1 300
+	
 
 
 	# 2 Chaos recipe 
