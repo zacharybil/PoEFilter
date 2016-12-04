@@ -9,33 +9,16 @@
 	# Rare items suitable for the 2 regal recipe have borders and highlight to indicate you should use them for the recipe
 	# High level white jewelery is shown because it can be beneficial to alch these
 
-# Hide unwanted items, also make them transparent and smaller 
-# (if you use key pick up this means screen doesn't get cluttered when picking up stuff)
-#
-	Hide
-		ItemLevel > 26
-		Rarity <= Magic
-		BaseType "Flask"
-		SetFontSize 17
-	# Should be further down but it gets hidden by below rule :(
-	Show
-		BaseType "Map"
-		SetFontSize 25
-		PlayAlertSound 1 300
-	Hide
-		ItemLevel > 15
-		Rarity <= Magic
-		SetFontSize 17
-		SetBackgroundColor 0 0 0 180
-
 # Show items you should pick up with borders
 #
 	# Show Misc
 	Show
 		Rarity = Unique
-		SetBorderColor 175 96 37
-	
-
+		SetBorderColor 175 96 37	
+	Show
+		BaseType "Map"
+		SetFontSize 25
+		PlayAlertSound 1 300
 
 	# 2 Chaos recipe 
 	# Low bases that are suitable for unidentified recipe
@@ -262,3 +245,19 @@
 		Rarity = Rare
 		SetBorderColor 255 255 119
 		SetFontSize 25
+		
+# Hide unwanted items, also make them transparent and smaller 
+# (if you use key pick up this means screen doesn't get cluttered when picking up stuff)
+#
+	Hide
+		ItemLevel > 26
+		Rarity <= Magic
+		BaseType "Flask"
+		SetFontSize 17
+	# Should be further down but it gets hidden by below rule :(
+
+	Hide
+		ItemLevel > 15
+		Rarity <= Magic
+		SetFontSize 17
+		SetBackgroundColor 0 0 0 180
