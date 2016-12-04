@@ -9,6 +9,20 @@
 	# Rare items suitable for the 2 regal recipe have borders and highlight to indicate you should use them for the recipe
 	# High level white jewelery is shown because it can be beneficial to alch these
 
+# Hide unwanted items, also make them transparent and smaller 
+# (if you use key pick up this means screen doesn't get cluttered when picking up stuff)
+#
+	Hide
+		ItemLevel > 26
+		Rarity <= Magic
+		BaseType "Flask"
+		SetFontSize 17
+	Hide
+		ItemLevel > 15
+		Rarity <= Magic
+		SetFontSize 17
+		SetBackgroundColor 0 0 0 180
+
 # Show items you should pick up with borders
 #
 	# Show Misc
@@ -19,22 +33,7 @@
 		Class "Map"
 		SetFontSize 25
 		PlayAlertSound 1 300
-	# Talismans
-	Show
-		BaseType "Talisman"
-		Rarity = Normal
-		SetBorderColor 200 200 200
-		SetFontSize 25
-	Show
-		BaseType "Talisman"
-		Rarity = Magic
-		SetBorderColor 136 136 255
-		SetFontSize 25
-	Show
-		BaseType "Talisman"
-		Rarity = Rare
-		SetBorderColor 255 255 119
-		SetFontSize 25
+
 
 	# 2 Chaos recipe 
 	# Low bases that are suitable for unidentified recipe
@@ -74,7 +73,141 @@
 		SetBorderColor 255 255 119
 		SetFontSize 25
 
-	# Show super awesome things larger and with purple colour
+	# Show 6 sockets
+	Show
+		Sockets = 6
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+		PlayAlertSound 4 300
+	Show
+		Sockets = 6
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+		PlayAlertSound 4 300
+	Show
+		Sockets = 6
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 25
+		PlayAlertSound 4 300
+
+	# Show quality gems
+	Show
+		Quality >= 1
+		Class "Gem"
+		SetBorderColor 27 162 155
+		SetFontSize 25
+	
+	# Show moderately awesome currency at normal size
+	Show
+		BaseType "Divine Orb" "Exalted Orb" "Eternal Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 35
+		PlayAlertSound 4 300
+	
+	# Show good currency
+	Show
+		BaseType "Perandus Coin" "Chaos Orb" "Regal Orb" "Orb of Alteration" "Chromatic Orb" "Vaal Orb" "Orb of Chance" "Orb of Regret" "Orb of Alchemy" "Orb of Fusing" "Gemcutter's Prism" "Cartographer's Chisel" "Orb of Scouring" "Blessed Orb" "Jeweller's Orb"
+		SetBorderColor 170 158 130
+		SetFontSize 25
+		
+	# Show breach stuff
+	Show
+		BaseType "Splinter of Xoph" "Splinter of Tul" "Splinter of Esh" "Splinter of Uul-Netol" "Splinter of Chayula" "Blessing of Xoph" "Blessing of Tul" "Blessing of Esh" "Blessing of Uul-Netol" "Blessing of Chayula"
+		SetBorderColor 170 158 130
+		SetFontSize 25	
+		
+	# Show Jewels
+	Show
+		Class "Jewel"
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetFontSize 25
+	Show
+		Class "Jewel"
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetFontSize 25
+	Show
+		Class "Jewel"
+		Rarity = Rare
+		SetBorderColor 255 255 119
+		SetFontSize 25
+
+	# Show high level jewelery (profitable to alch)
+	Show
+		ItemLevel >= 75
+		Rarity = Normal
+		BaseType "Topaz Ring" "Coral Ring" "Sapphire Ring" "Gold Ring" "Amethyst Ring" "Two-Stone Ring" "Amber Amulet" "Lapis Amulet" "Onyx Amulet" "Agate Amulet" "Turquoise Amulet" "Citrine Amulet" "Jade Amulet"
+		SetFontSize 17
+		
+	# Show divination cards
+	Show
+		Class "Divination Card"
+		SetBorderColor 1 175 239
+		SetFontSize 25
+
+# Show things to consider picking up at smallest size
+#
+	Show 
+		LinkedSockets = 4
+		ItemLevel < 70	
+		SetFontSize 25	
+	Show
+		Quality = 20
+		Class "Flask"
+		SetFontSize 25	
+	Show
+		BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+		Rarity = Normal
+		SetFontSize 25	
+	Show
+		BaseType "Sapphire Flask" "Granite Flask" "Jade Flask" "Diamond Flask" "Topaz Flask" "Ruby Flask" "Basalt Flask" "Aquamarine Flask" "Stibnite Flask" "Sulphur Flask" "Silver Flask" "Bismuth Flask" "Quicksilver Flask"
+		SetFontSize 19	
+	Show
+		Quality = 0
+		Class "Gem"
+		SetFontSize 25	
+	Show
+		BaseType "Sacrificial Garb"	
+		SetFontSize 25
+	Show
+		Class "Currency"
+		SetFontSize 25
+	Show
+		Rarity = Rare
+		SetFontSize 25
+	
+	# Things to chance - change this as you wish, chancable bases change every league
+ 	Show
+  		BaseType "Sorcerer Boots"
+ 		Rarity = Normal
+  		SetFontSize 25
+		  
+	# RGB sockets, I don't necessarily want to pick these up but
+	# I need to be able to identify them quickly so they have the border
+	# but are also faded. I think this needs to go close to the bottom
+	# otherwise it will display 5 links and rares like this. Also only 4 slot
+	# pieces are shown because they take less space
+	Show
+		Class "Helm" "Boots" "Gloves"
+		SocketGroup RGB
+		Rarity = Normal
+		SetBorderColor 200 200 200
+		SetBackgroundColor 0 0 0 180
+		SetFontSize 17
+	Show
+		Class "Helm" "Boots" "Gloves"
+		SocketGroup RGB
+		Rarity = Magic
+		SetBorderColor 136 136 255
+		SetBackgroundColor 0 0 0 180
+		SetFontSize 17		
+		
+# Show super awesome things larger and with purple colour
+#
 	Show
 		BaseType "Albino Rhoa Feather"	
 		SetTextColor 255 0 255
@@ -111,210 +244,19 @@
 		SetBorderColor 255 255 119
 		PlayAlertSound 4 300
 
-	# Show 6 sockets
+# Talismans
 	Show
-		Sockets = 6
+		BaseType "Talisman"
 		Rarity = Normal
 		SetBorderColor 200 200 200
 		SetFontSize 25
-		PlayAlertSound 4 300
 	Show
-		Sockets = 6
+		BaseType "Talisman"
 		Rarity = Magic
 		SetBorderColor 136 136 255
 		SetFontSize 25
-		PlayAlertSound 4 300
 	Show
-		Sockets = 6
+		BaseType "Talisman"
 		Rarity = Rare
 		SetBorderColor 255 255 119
 		SetFontSize 25
-		PlayAlertSound 4 300
-
-	# Show quality gems
-	Show
-		Quality >= 1
-		Class "Gem"
-		SetBorderColor 27 162 155
-		SetFontSize 25
-	
-	# Show moderately awesome currency at normal size
-	Show
-		BaseType "Divine Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 35
-		PlayAlertSound 4 300
-	Show
-		BaseType "Exalted Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 35
-		PlayAlertSound 4 300
-	Show
-		BaseType "Eternal Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 35
-		PlayAlertSound 4 300
-	
-	# Show good currency	
-	Show
-		BaseType "Chaos Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Regal Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Orb of Alteration"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Chromatic Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Jeweller's Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Blessed Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Orb of Scouring"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Cartographer's Chisel"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Gemcutter's Prism"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Orb of Fusing"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Orb of Alchemy"
-		SetBorderColor 170 158 130
-		SetFontSize 25	
-	Show
-		BaseType "Orb of Regret"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Vaal Orb"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-	Show
-		BaseType "Orb of Chance"
-		SetBorderColor 170 158 130
-		SetFontSize 25
-			
-	# Show Jewels
-	Show
-		Class "Jewel"
-		Rarity = Normal
-		SetBorderColor 200 200 200
-		SetFontSize 25
-	Show
-		Class "Jewel"
-		Rarity = Magic
-		SetBorderColor 136 136 255
-		SetFontSize 25
-	Show
-		Class "Jewel"
-		Rarity = Rare
-		SetBorderColor 255 255 119
-		SetFontSize 25
-
-	# Show high level jewelery (profitable to alch)
-	Show
-		ItemLevel >= 75
-		Rarity = Normal
-		BaseType "Topaz Ring" "Coral Ring" "Sapphire Ring" "Gold Ring" "Amethyst Ring" "Two-Stone Ring" "Amber Amulet" "Lapis Amulet" "Onyx Amulet" "Agate Amulet" "Turquoise Amulet" "Citrine Amulet" "Jade Amulet"
-		SetFontSize 17
-		
-	# Show divination cards
-	Show
-		Class "Divination Card"
-		SetBorderColor 1 175 239
-		SetFontSize 25
-
-# Show things to consider picking up at smallest size
-#
-	Show 
-		LinkedSockets = 4
-		ItemLevel < 60	
-		SetFontSize 25	
-	Show
-		Quality = 20
-		Class "Flask"
-		SetFontSize 25	
-	Show
-		BaseType "Stone Hammer" "Rock Breaker"
-		Rarity = Normal
-		SetFontSize 25	
-	Show
-		BaseType "Sapphire Flask" "Granite Flask" "Jade Flask" "Diamond Flask" "Topaz Flask" "Ruby Flask"
-		SetFontSize 17	
-	Show
-		Quality = 0
-		Class "Gem"
-		SetFontSize 25	
-	Show
-		BaseType "Sacrificial Garb"	
-		SetFontSize 25
-	Show
-		Class "Currency"
-		SetFontSize 25
-	Show
-		Rarity = Rare
-		SetFontSize 25
-	
-	# Things to chance
- 	Show
-  		BaseType "Desert Brigandine" "Gavel" "Occultist's Vestment" "Glorious Plate" "Spine Bow" "Judgement Staff"
- 		Rarity = Normal
-  		SetFontSize 25
-		  
-	Show
-		Rarity = Magic
-		SetFontSize 25
-		BaseType "Vaal Axe"
-		  
-	# RGB sockets, I don't necessarily want to pick these up but
-	# I need to be able to identify them quickly so they have the border
-	# but are also faded. I think this needs to go close to the bottom
-	# otherwise it will display 5 links and rares like this. Also only 4 slot
-	# pieces are shown because they take less space
-	Show
-		Class "Helm" "Boots" "Gloves"
-		SocketGroup RGB
-		Rarity = Normal
-		SetBorderColor 200 200 200
-		SetBackgroundColor 0 0 0 180
-		SetFontSize 17
-	Show
-		Class "Helm" "Boots" "Gloves"
-		SocketGroup RGB
-		Rarity = Magic
-		SetBorderColor 136 136 255
-		SetBackgroundColor 0 0 0 180
-		SetFontSize 17		
-
-# Hide unwanted items, also make them transparent and smaller 
-# (if you use key pick up this means screen doesn't get cluttered when picking up stuff)
-#
-	Hide
-		ItemLevel > 26
-		Rarity <= Magic
-		BaseType "Flask"
-		SetFontSize 17
-	Hide
-		ItemLevel > 15
-		Rarity <= Magic
-		SetFontSize 17
-		SetBackgroundColor 0 0 0 180
